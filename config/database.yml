@@ -7,6 +7,6 @@ development:
   <<: *default
   database: 'truckers_development'
   username: 'postgres'
-  password: 'postgres'
+  password: 'sher'
   host: localhost
   port: 5432

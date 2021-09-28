@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @truck.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @truck.type_of_truck %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @truck.year %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @truck.capacity %>
+</p>
+
+<p>
+  <strong>Reserved:</strong>
+  <%= @truck.reserved %>
+</p>
+
+<%= link_to 'Edit', edit_truck_path(@truck) %> |
+<%= link_to 'Back', trucks_path %>
