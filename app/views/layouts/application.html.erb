@@ -14,22 +14,24 @@
         <div class="navbar-header">
           <img class="nav-truck" src="<%= image_path('truck_grey.png') %>" width="37" height="37"/>
         </div>
-        <ul class="nav nav-tabs pull-right">
+        <% if Current.user  %>
+          <ul class="nav nav-tabs pull-right">
+            <li>
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="nav nav-tabs pull-right">
             <li>
               <%= link_to 'Register', new_user_registration_path %>
             </li>
             <li>
-              <%= link_to 'Login' %>
+              <%= link_to 'Login', new_user_session_path %>
             </li>
           </ul>
-          <ul class="nav nav-tabs pull-right">
-          <li>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-          </li>
-        </ul>
+        <% end %>
       </div>
     </nav>
-
     <div class="container">
       <div class="row-fluid">
         <div class="span8">

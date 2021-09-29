@@ -1,12 +1,12 @@
 class TrucksController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_truck, only: %i[ show edit update destroy ]
 
   # GET /trucks or /trucks.json
   def index
     @trucks = Truck.all
-    @user = 1
+    # @user = 1
   end
 
   # GET /trucks/1 or /trucks/1.json
@@ -25,7 +25,7 @@ class TrucksController < ApplicationController
   # POST /trucks or /trucks.json
   def create
     @truck = Truck.new(truck_params)
-
+    # @truck.user = current_user
     respond_to do |format|
       if @truck.save
         format.html { redirect_to @truck, notice: "Truck was successfully created." }
