@@ -1,12 +1,9 @@
 class TrucksController < ApplicationController
-
-  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_truck, only: %i[ show edit update destroy ]
 
   # GET /trucks or /trucks.json
   def index
     @trucks = Truck.all
-    # @user = 1
   end
 
   # GET /trucks/1 or /trucks/1.json
@@ -25,7 +22,7 @@ class TrucksController < ApplicationController
   # POST /trucks or /trucks.json
   def create
     @truck = Truck.new(truck_params)
-    # @truck.user = current_user
+
     respond_to do |format|
       if @truck.save
         format.html { redirect_to @truck, notice: "Truck was successfully created." }
@@ -67,6 +64,6 @@ class TrucksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def truck_params
-      params.require(:truck).permit(:name, :type_of_truck, :year, :capacity, :reserved,  :'1')
+      params.require(:truck).permit(:name, :trucktype, :year, :capacity, :reserved)
     end
 end

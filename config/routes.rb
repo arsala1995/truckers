@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :trucks
   devise_for :users
+  resources :trucks
+  resources :users, :only => [:show]
   root :to => "welcome#index"
 
+  get 'users/:id' => 'users#show'
   get 'welcome/index'
   get 'sessions/new'
   get 'register' => 'trucks#new', :as => :register

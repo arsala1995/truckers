@@ -14,13 +14,9 @@
         <div class="navbar-header">
           <img class="nav-truck" src="<%= image_path('truck_grey.png') %>" width="37" height="37"/>
         </div>
-        <% if Current.user  %>
-          <ul class="nav nav-tabs pull-right">
-            <li>
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-            </li>
-          </ul>
-        <% else %>
+        # <% if Current.user  %>
+      
+        # <% else %>
           <ul class="nav nav-tabs pull-right">
             <li>
               <%= link_to 'Register', new_user_registration_path %>
@@ -29,7 +25,12 @@
               <%= link_to 'Login', new_user_session_path %>
             </li>
           </ul>
-        <% end %>
+          <ul class="nav nav-tabs pull-right">
+          <li>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+        # <% end %>
       </div>
     </nav>
     <div class="container">

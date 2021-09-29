@@ -6,11 +6,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Type</th>
+      <th>Trucktype</th>
       <th>Year</th>
       <th>Capacity</th>
       <th>Reserved</th>
-      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +18,7 @@
     <% @trucks.each do |truck| %>
       <tr>
         <td><%= truck.name %></td>
-        <td><%= truck.type_of_truck %></td>
+        <td><%= truck.trucktype %></td>
         <td><%= truck.year %></td>
         <td><%= truck.capacity %></td>
         <td><%= truck.reserved %></td>

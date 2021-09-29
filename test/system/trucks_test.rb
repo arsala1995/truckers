@@ -17,8 +17,7 @@ class TrucksTest < ApplicationSystemTestCase
     fill_in "Capacity", with: @truck.capacity
     fill_in "Name", with: @truck.name
     check "Reserved" if @truck.reserved
-    fill_in "Type", with: @truck.type_of_truck
-    fill_in "User", with: @truck.user
+    fill_in "Trucktype", with: @truck.trucktype
     fill_in "Year", with: @truck.year
     click_on "Create Truck"
 
@@ -33,8 +32,7 @@ class TrucksTest < ApplicationSystemTestCase
     fill_in "Capacity", with: @truck.capacity
     fill_in "Name", with: @truck.name
     check "Reserved" if @truck.reserved
-    fill_in "Type", with: @truck.type_of_truck
-    fill_in "User", with: @truck.user
+    fill_in "Trucktype", with: @truck.trucktype
     fill_in "Year", with: @truck.year
     click_on "Update Truck"
 
