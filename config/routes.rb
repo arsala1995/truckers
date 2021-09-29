@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :trucks
   resources :users, :only => [:show]
-  root :to => "welcome#index"
+  root :to => "trucks#index"
 
   get 'users/:id' => 'users#show'
   get 'welcome/index'
